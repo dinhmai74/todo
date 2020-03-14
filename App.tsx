@@ -3,8 +3,11 @@ import "./App.css";
 import { Todo } from "./components/Todo";
 
 function App() {
+  // list todos render
   const [todos, setTodos] = useState<string[]>([]);
+  // lưu lại input => bấm nút add mới add vào list todos
   const [query, setQuery] = useState("");
+  // lay ref reset input khi submit add
   const queryRef = useRef(null);
 
   const handleSubmit = () => {
@@ -20,6 +23,7 @@ function App() {
     <div className="App mt-40 justify-center items-center">
       <p className="text-2xl mb-20">TODO app</p>
       <input
+        // tailwindcss style cho le.
         className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block appearance-none leading-normal mx-auto"
         placeholder="new todo"
         onChange={event => setQuery(event.target.value)}
